@@ -5,5 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AREA</title>
   </head>
-  <body></body>
+  <body>
+    <h1>AREA</h1>
+    <label>
+      Width: <input type="number" min="1" value="12" id="width" />Feet</label
+    >
+    <br />
+    <label>
+      Height: <input type="number" min="1" value="8" id="height" />Feet</label
+    >
+
+    <p>Result: <span id="output">?</span></p>
+    <button id="calculate">Calculate</button>
+    <script src="./area.js"></script>
+    <script>
+      function onClick() {
+        output.innerText = area(width.value, height.value);
+      }
+      calculate.addEventListener("click", onClick);
+    </script>
+  </body>
 </html>

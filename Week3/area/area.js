@@ -8,9 +8,3 @@ function area(width, height) {
 console.log(area(10, 20));
 console.log(area(12, 20));
 console.log(area(24, 40));
-
-// height = 10;
-// width = 20;
-// myArea = area(width, height);
-
-// console.log(myArea);
