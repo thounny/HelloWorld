@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <fieldset style="width: 50%; margin: auto">
+      <h1>Calculator</h1>
+      <table style="width: 100%">
+        <tr>
+          <td>First 1:</td>
+          <td>
+            <input type="number" id="numberA" />
+          </td>
+        </tr>
+        <tr>
+          <td>Second 2:</td>
+          <td>
+            <input type="number" id="numberB" />
+          </td>
+        </tr>
+      </table>
+      <br /><br />
+
+      <button id="btnAdd">Add</button>
+      <button id="btnSubtract">Subtract</button>
+      <button id="btnMultiply">Multiply</button>
+      <button id="btnDivide">Divide</button>
+
+      <br />
+      <br />
+      Answer: <input type="number" id="answer" readonly />
+    </fieldset>
+    <script src="main.js"></script>
+    <script>
+      // // page elements
+      // const numberA = document.getElementById("numberA");
+      // const numberB = document.getElementById("numberB");
+      // const answer = document.getElementById("answer");
+      // const btnAdd = document.getElementById("btnAdd");
+      // const btnSubtract = document.getElementById("btnSubtract");
+      // const btnMultiply = document.getElementById("btnMultiply");
+      // const btnDivide = document.getElementById("btnDivide");
+      // // event listeners
+      // btnAdd.addEventListener("click", () => {
+      //   const a = parseFloat(numberA.value);
+      //   const b = parseFloat(numberB.value);
+      //   const result = add(a, b);
+      //   answer.value = result;
+      // });
+      // btnSubtract.addEventListener("click", () => {
+      //   const a = parseFloat(numberA.value);
+      //   const b = parseFloat(numberB.value);
+      //   const result = subtract(a, b);
+      //   answer.value = result;
+      // });
+      // btnMultiply.addEventListener("click", () => {
+      //   const a = parseFloat(numberA.value);
+      //   const b = parseFloat(numberB.value);
+      //   const result = multiply(a, b);
+      //   answer.value = result;
+      // });
+      // btnDivide.addEventListener("click", () => {
+      //   const a = parseFloat(numberA.value);
+      //   const b = parseFloat(numberB.value);
+      //   const result = divide(a, b).toFixed(3);
+      //   answer.value = result;
+      // });
+
+      //  THE RIGHT WAY
+      function onClick(event) {
+        const operator = event.target.innerText.toLowerCase();
+        const a = Number(numberA.value);
+        const b = Number(numberB.value);
+        if ("divide" == operator) {
+          answer.value = calc(a, b, operator).toFixed(3);
+        } else {
+          answer.value = calc(a, b, operator);
+        }
+      }
+
+      btnAdd.addEventListener("click", onClick);
+      btnSubtract.addEventListener("click", onClick);
+      btnMultiply.addEventListener("click", onClick);
+      btnDivide.addEventListener("click", onClick);
+    </script>
+  </body>
+</html>
